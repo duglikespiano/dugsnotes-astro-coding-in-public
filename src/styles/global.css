@@ -1,10 +1,154 @@
+/* If you’re struggling with POSTCSS, feel free to change to using this file. You’ll just copy this content and replace everything in your global.css file with this file’s contents 😄 */
+
 *,
-*:before,
-*:after {
-	animation-duration: 0.01ms !important;
-	animation-iteration-count: 1 !important;
-	transition-duration: 0.01ms !important;
-	scroll-behavior: auto !important;
+*:after,
+*:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+nav :where(ol, ul) {
+	list-style: none;
+}
+
+img,
+picture {
+	width: 100%;
+	max-width: 100%;
+	display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	word-wrap: break-word;
+}
+
+:root {
+	--_hue: 235;
+	--bkg--light: var(--_hue) 25% 97%;
+	--txt--light: var(--_hue) 40% 5%;
+	--accent--light: var(--_hue) 55% 50%;
+	--muted--light: var(--_hue) 30% 99%;
+	--bkg--dark: var(--_hue) 15% 10%;
+	--txt--dark: var(--_hue) 20% 85%;
+	--accent--dark: var(--_hue) 50% 50%;
+	--muted--dark: var(--_hue) 20% 2%;
+	--bkg: var(--bkg--light);
+	--txt: var(--txt--light);
+	--accent: var(--accent--light);
+	--muted: var(--muted--light);
+	color-scheme: light;
+	--space-2xs: max(0.31rem, min(calc(0.18rem + 0.65vw), 0.69rem));
+	--space-xs: max(0.56rem, min(calc(0.39rem + 0.87vw), 1.06rem));
+	--space-sm: max(0.88rem, min(calc(0.7rem + 0.87vw), 1.38rem));
+	--space-md: max(1.13rem, min(calc(0.8rem + 1.63vw), 2.06rem));
+	--space-lg: max(1.69rem, min(calc(1.32rem + 1.85vw), 2.75rem));
+	--space-xl: max(2.25rem, min(calc(1.6rem + 3.26vw), 4.13rem));
+	--space-2xl: max(3.38rem, min(calc(2.64rem + 3.7vw), 5.5rem));
+	--space-3xl: max(4.5rem, min(calc(3.2rem + 6.52vw), 8.25rem));
+	--content-xs: 20ch;
+	--content-sm: 30ch;
+	--content-md: 45ch;
+	--content-lg: 65ch;
+	--fs-sm: max(0.78rem, min(calc(0.75rem + 0.17vw), 0.88rem));
+	--fs-md: max(1.13rem, min(calc(1.04rem + 0.43vw), 1.38rem));
+	--fs-lg: max(1.35rem, min(calc(1.22rem + 0.64vw), 1.72rem));
+	--fs-xl: max(1.94rem, min(calc(1.69rem + 1.29vw), 2.69rem));
+	--fs-2xl: max(2.8rem, min(calc(2.31rem + 2.43vw), 4.2rem));
+	--lh-1: 1;
+	--lh-1-1: 1.1;
+	--lh-1-4: 1.4;
+	--_shadow-strength: 0.25;
+	--_shadow-saturation: 30%;
+	--_shadow-lightness: 62%;
+	--_shadow: var(--_hue) var(--_shadow-saturation) var(--_shadow-lightness);
+	--shadow-sm: 0.2px 0.5px 0.6px hsl(var(--_shadow) / var(--_shadow-strength)),
+		0.3px 0.8px 1px -1.2px hsl(var(--_shadow) / var(--_shadow-strength)),
+		0.8px 1.9px 2.3px -2.5px hsl(var(--_shadow) / var(--_shadow-strength));
+	--shadow-md: 0.2px 0.5px 0.6px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
+		0.6px 1.5px 1.8px -0.8px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
+		1.6px 3.8px 4.6px -1.7px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04)),
+		3.9px 9.3px 11.3px -2.5px hsl(var(--_shadow) / calc(var(--_shadow-strength) + 0.04));
+	--shadow-lg: 0.2px 0.5px 0.6px hsl(var(--_shadow) / var(--_shadow-strength)),
+		1.1px 2.7px 3.3px -0.4px hsl(var(--_shadow) / var(--_shadow-strength)),
+		2.1px 5px 6.1px -0.7px hsl(var(--_shadow) / var(--_shadow-strength)),
+		3.5px 8.3px 10.1px -1.1px hsl(var(--_shadow) / var(--_shadow-strength)),
+		5.6px 13.2px 16.1px -1.4px hsl(var(--_shadow) / var(--_shadow-strength)),
+		8.7px 20.7px 25.3px -1.8px hsl(var(--_shadow) / var(--_shadow-strength)),
+		13.3px 31.4px 38.4px -2.1px hsl(var(--_shadow) / var(--_shadow-strength)),
+		19.6px 46.3px 56.6px -2.5px hsl(var(--_shadow) / var(--_shadow-strength));
+	--border-sm: 1px;
+	--border-md: 3px;
+	--border-lg: 5px;
+	--radius-sm: 0.2em;
+	--radius-md: 0.4em;
+	--radius-lg: 0.8em;
+	--radius-full: 100vmax;
+	--_tspeed_fast: 0.15s;
+	--_tspeed_slow: 0.4s;
+	--_ttiming_ease: cubic-bezier(0.3, 0, 0.7, 1);
+	--_ttiming_squish: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+	--transition-ease-slow: var(--_tspeed_slow) var(--_ttiming_ease);
+	--transition-ease-fast: var(--_tspeed_fast) var(--_ttiming_ease);
+	--transition-squish-slow: var(--_tspeed_slow) var(--_ttiming_squish);
+	--transition-squish-fast: var(--_tspeed_fast) var(--_ttiming_squish);
+}
+
+@media (color-index: 48) {
+	:root {
+		--bkg: var(--bkg--dark);
+		--txt: var(--txt--dark);
+		--accent: var(--accent--dark);
+		--muted: var(--muted--dark);
+		color-scheme: dark;
+		--_shadow-strength: 0.75;
+		--_shadow-saturation: 75%;
+		--_shadow-lightness: 6%;
+	}
+}
+
+@media (color: 48842621) {
+	:root {
+		--bkg: var(--bkg--dark);
+		--txt: var(--txt--dark);
+		--accent: var(--accent--dark);
+		--muted: var(--muted--dark);
+		color-scheme: dark;
+		--_shadow-strength: 0.75;
+		--_shadow-saturation: 75%;
+		--_shadow-lightness: 6%;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bkg: var(--bkg--dark);
+		--txt: var(--txt--dark);
+		--accent: var(--accent--dark);
+		--muted: var(--muted--dark);
+		color-scheme: dark;
+		--_shadow-strength: 0.75;
+		--_shadow-saturation: 75%;
+		--_shadow-lightness: 6%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*:before,
+	*:after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 button {

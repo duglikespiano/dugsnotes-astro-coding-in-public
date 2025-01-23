@@ -2,6 +2,9 @@
 // library imports
 import { Icon } from 'astro-icon/components';
 
+// component imports
+import Link from './Link.astro';
+
 // data imports
 import navData from '../data/navData';
 ---
@@ -12,7 +15,11 @@ import navData from '../data/navData';
 			<Icon name="logomark" width="60" />
 		</a>
 		<ul>
-			{navData.map((item) => <a href={item.path}>{item.name}</a>)}
+			{navData.map((item) => <Link text={item.name} href={item.path} style="primary" isFilled={false} data-navLink />)}
 		</ul>
 	</div>
 </nav>
+
+<script>
+	import '../js/nav.ts';
+</script>

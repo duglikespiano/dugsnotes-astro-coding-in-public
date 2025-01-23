@@ -1,17 +1,21 @@
 {
-  "name": "astro-by-coding-in-public",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "astro": "^5.1.8"
-  },
-  "devDependencies": {
-    "sass-embedded": "^1.83.4"
-  }
+	"name": "astro-by-coding-in-public",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^5.1.8"
+	},
+	"devDependencies": {
+		"postcss": "^8.5.1",
+		"postcss-custom-media": "^11.0.5",
+		"postcss-preset-env": "^10.1.3",
+		"sass-embedded": "^1.83.4",
+		"tailwindcss": "^4.0.0"
+	}
 }

@@ -1,9 +1,9 @@
 ---
 // Component import
 import MainHead from '../components/MainHead.astro';
+import '../styles/font.css';
+import '../styles/global.css';
 const { title, description } = Astro.props;
-
-const isRed = true;
 ---
 
 <!doctype html>
@@ -11,15 +11,5 @@ const isRed = true;
 	<MainHead {title} {description} />
 	<body>
 		<slot />
-		<p class:list={[1, 2, { red: isRed }, 4]}>This is red</p>
 	</body>
 </html>
-
-<style lang="scss" is:global>
-	p {
-		font-size: 10rem;
-	}
-	.red {
-		color: red;
-	}
-</style>

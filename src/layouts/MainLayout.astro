@@ -5,12 +5,12 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 import '../styles/font.css';
-const { title, description } = Astro.props;
+const { title, description, image, frontmatter, robots } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<MainHead {title} {description} />
+	<MainHead {title} {description} {image} {frontmatter} {robots} />
 	<body>
 		<Nav />
 		<main>

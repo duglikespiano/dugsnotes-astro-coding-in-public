@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import Counter from './Counter';
 ---
 
 <footer>
@@ -8,6 +9,7 @@ import { Icon } from 'astro-icon/components';
 			Copyright &copy;<span id="copyright"></span><span> | All rights reserved</span>
 		</small>
 		<small>
+			<Counter client:load />
 			<a href="/rss.xml">
 				Subscribe to RSS
 				<Icon name="tabler:rss" width="20" height="20" />

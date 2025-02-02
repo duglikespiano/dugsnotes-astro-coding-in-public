@@ -15,7 +15,7 @@
 
 - Project title : dugsnotes_astro_by_coding_in_public
 - Related URL : https://shorturl.at/22BsR
-- Period : Jan 23 2025 - In progress
+- Period : Jan 23 2025 - Feb 03 2025
 - Member(s) : Dug Park
 - Tech stack : </br>
   <img src="https://img.shields.io/badge/astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white">

@@ -15,7 +15,7 @@
 
 - Project タイトル : dugsnotes_astro_by_coding_in_public
 - 関連 URL : https://shorturl.at/22BsR
-- 期間 : 2025.01.23 - 進行中
+- 期間 : 2025.01.23 - 2025. 02.03
 - 人員 : 1 人
 - 技術スタック : </br>
   <img src="https://img.shields.io/badge/astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white">

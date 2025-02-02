@@ -15,7 +15,7 @@
 
 - 프로젝트명 : dugsnotes_astro_by_coding_in_public
 - 관련URL : https://shorturl.at/22BsR
-- 기간 : 2025.01.23 - 진행중
+- 기간 : 2025.01.23 - 2025. 02.03
 - 인원 : 1인
 - 기술스택 : </br>
   <img src="https://img.shields.io/badge/astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white">

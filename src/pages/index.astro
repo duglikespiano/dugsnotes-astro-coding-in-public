@@ -11,15 +11,6 @@ const postsContent = Object.values(allPostsMarkdowns) as Post[];
 const formattedPosts = formatBlogPosts(postsContent, {
 	limit: 3,
 }) as Post[];
-
-type Post = {
-	frontmatter: {
-		title: string;
-		date: string;
-		tags?: string[];
-	};
-	url: string;
-};
 ---
 
 <MainLayout title="My Blog" description="My Blog">

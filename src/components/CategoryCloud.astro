@@ -1,0 +1,37 @@
+---
+// Utiles imports
+import { formatBlogPosts, slugify } from '../js/utils';
+
+const allPostsMarkdowns = import.meta.glob<Post>('../pages/blog/*.md', { eager: true });
+const postsContent = Object.values(allPostsMarkdowns) as Post[];
+const formattedPosts = formatBlogPosts(postsContent) as Post[];
+
+console.log(allPostsMarkdowns);
+const allCategories = formattedPosts.map((post) => post.frontmatter.category.toLowerCase()).flat();
+const processedCategories = allCategories.reduce<Record<string, number>>(
+	(acc, category) => {
+		const value = acc[category] || 0;
+		return {
+			...acc,
+			[category]: value + 1,
+		};
+	},
+	{} as Record<string, number>
+);
+
+console.log(processedCategories);
+
+const { showCount } = Astro.props;
+---
+
+<ul class="categories">
+	{
+		Object.entries(processedCategories).map(([key, value]) => (
+			<li>
+				<a class="badge" href={`/category/${slugify(key)}`}>
+					{key} {showCount && `(${value})`}
+				</a>
+			</li>
+		))
+	}
+</ul>

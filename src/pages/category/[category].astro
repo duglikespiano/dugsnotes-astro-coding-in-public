@@ -1,10 +1,8 @@
 ---
-// Component imports
 import MainLayout from '../../layouts/MainLayout.astro';
 import PostCard from '../../components/PostCard.astro';
-
-// Utiles imports
 import { slugify } from '../../js/utils';
+import type { Post } from '../../pages/Types';
 
 export const getStaticPaths = () => {
 	return [
